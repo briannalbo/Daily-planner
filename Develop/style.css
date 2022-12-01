@@ -21,6 +21,10 @@ textarea {
   white-space: pre-wrap;
 }
 
+p{
+  display: inline-block;
+}
+
 .lead {
   padding-bottom: 15px;
 }

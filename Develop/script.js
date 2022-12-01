@@ -1,10 +1,43 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-var currentTime = document.querySelector('#currentDay')
+var currentDay = $("#currentDay")
+var clock = $("#clock");
+var hours = [$("#9"), $("#10"), $("#11"), $("#12"), $("#13"), $("#14"), $("#15"), $("#16"), $("#17")]
 
-currentTime.textContent= dayjs().format('MMMM-DD-YYYY-HH:mm');
-document.getElementById('currentDay').style.fontSize = "30px";
+
+currentDay.text(dayjs().format('MMMM-DD-YYYY'));
+$("#currentDay").css("font-size","32px");
+
+clock.text(dayjs().format('h:mm:a'));
+$("#clock").css("font-size", "26px");
+$("#clock").css("padding-left", "20px");
+
+
+
+currentHour = dayjs().hour();
+console.log(currentHour);
+
+
+
+function timeBlock() {
+  
+  for (i = 0; i < hours.length; i++) {
+    var hourNumber = hours[i].value;
+    console.log(hourNumber.value);
+    if (hourNumber < currentHour) {
+      hours[i].children("textarea").css("background-color", "blue")
+    }
+   
+  else {
+    hours[i].children("textarea").css("background-color", "red");
+  }
+timeBlock();
+}
+}
+timeBlock();
+
+
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
