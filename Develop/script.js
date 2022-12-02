@@ -3,8 +3,7 @@
 // in the html.
 var currentDay = $("#currentDay")
 var clock = $("#clock");
-var hours = [$("#9"), $("#10"), $("#11"), $("#12"), $("#13"), $("#14"), $("#15"), $("#16"), $("#17")]
-
+var hours = [$("#09"), $("#10"), $("#11"), $("#12"), $("#13"), $("#14"), $("#15"), $("#16"), $("#17")];
 
 currentDay.text(dayjs().format('MMMM-DD-YYYY'));
 $("#currentDay").css("font-size","32px");
@@ -18,21 +17,23 @@ $("#clock").css("padding-left", "20px");
 currentHour = dayjs().hour();
 console.log(currentHour);
 
-
-
 function timeBlock() {
   
   for (i = 0; i < hours.length; i++) {
-    var hourNumber = hours[i].value;
-    console.log(hourNumber.value);
-    if (hourNumber < currentHour) {
-      hours[i].children("textarea").css("background-color", "blue")
+    currentHour = dayjs().hour();
+    var hourNumber = hours[i].attr("id");
+    console.log(hourNumber);
+    
+    if (hourNumber > currentHour) {
+      hours[i].children("textarea").css("background-color", "green");
     }
    
-  else {
-    hours[i].children("textarea").css("background-color", "red");
+  else if (hourNumber < currentHour) {
+    hours[i].children("textarea").css("background-color", "turquoise");
   }
-timeBlock();
+  else if (hourNumber == currentHour) {
+    hours[i].children("textarea").css("background-color", "red")
+  }
 }
 }
 timeBlock();
