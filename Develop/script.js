@@ -38,6 +38,11 @@ function timeBlock() {
 }
 timeBlock();
 
+$("button").on("click", function() {
+  var userInput = 
+  
+})
+
 
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
