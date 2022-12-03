@@ -43,21 +43,6 @@ p{
   border-top: 1px dashed #000000;
 }
 
-.past {
-  background-color: #d3d3d3;
-  color: white;
-}
-
-.present {
-  background-color: #ff6961;
-  color: white;
-}
-
-.future {
-  background-color: #77dd77;
-  color: white;
-}
-
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
@@ -70,7 +55,3 @@ p{
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
-/* article{
-  display: transparent;
-  height:10px;
-} */

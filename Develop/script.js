@@ -23,6 +23,7 @@ function timeBlock() {
     currentHour = dayjs().hour();
     var hourNumber = hours[i].attr("id");
     console.log(hourNumber);
+    hours[i].children("textarea").val(JSON.parse(localStorage.getItem(hourNumber)));
     
     if (hourNumber > currentHour) {
       hours[i].children("textarea").css("background-color", "green");
@@ -32,14 +33,16 @@ function timeBlock() {
     hours[i].children("textarea").css("background-color", "turquoise");
   }
   else if (hourNumber == currentHour) {
-    hours[i].children("textarea").css("background-color", "red")
+    hours[i].children("textarea").css("background-color", "red");
   }
 }
 }
 timeBlock();
 
 $("button").on("click", function() {
-  var userInput = 
+  var userInput = $(this).siblings("textarea");
+  
+  localStorage.setItem(userInput.parent().attr("id"), JSON.stringify(userInput.val()));
   
 })
 
