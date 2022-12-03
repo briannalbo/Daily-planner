@@ -4,6 +4,7 @@
 var currentDay = $("#currentDay")
 var clock = $("#clock");
 var hours = [$("#09"), $("#10"), $("#11"), $("#12"), $("#13"), $("#14"), $("#15"), $("#16"), $("#17")];
+var remove = $("#delete");
 
 currentDay.text(dayjs().format('MMMM-DD-YYYY'));
 $("#currentDay").css("font-size","32px");
@@ -15,6 +16,7 @@ $("#clock").css("padding-left", "20px");
 
 
 currentHour = dayjs().hour();
+
 console.log(currentHour);
 
 function timeBlock() {
@@ -45,6 +47,14 @@ $("button").on("click", function() {
   localStorage.setItem(userInput.parent().attr("id"), JSON.stringify(userInput.val()));
   
 })
+
+$("remove").on("click", function() {
+if (cb.checked || true) {
+  console.log('keep');
+}
+})
+var cb = document.querySelectorAll('.form-check-input');
+        console.log(cb.checked); // false
 
 
 $(function () {
