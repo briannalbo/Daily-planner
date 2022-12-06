@@ -43,6 +43,8 @@ in each time slot will soon be available to the user as well.
 For additional information, please refer to the notes within 
 the files.
 ```
+## Deployed Webpage
+https://briannalbo.github.io/Daily-planner/
 
 ![A user clicks on slots on the color-coded calendar and edits the events.](./Assets/plannerpic.png)
 
