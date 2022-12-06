@@ -5,6 +5,7 @@ var currentDay = $("#currentDay")
 var clock = $("#clock");
 var hours = [$("#09"), $("#10"), $("#11"), $("#12"), $("#13"), $("#14"), $("#15"), $("#16"), $("#17")];
 var remove = $("#delete");
+var save = $(".saveBtn");
 
 currentDay.text(dayjs().format('MMMM-DD-YYYY'));
 $("#currentDay").css("font-size","32px");
@@ -41,20 +42,27 @@ function timeBlock() {
 }
 timeBlock();
 
-$("button").on("click", function() {
+$(save).on("click", function() {
   var userInput = $(this).siblings("textarea");
   
   localStorage.setItem(userInput.parent().attr("id"), JSON.stringify(userInput.val()));
   
 })
 
-$("remove").on("click", function() {
-if (cb.checked || true) {
+$ (remove).on("click", function() {
+  for (i = 0; i < hours.length; i++); 
+  var cb = document.querySelectorAll('.form-check-input');
+if (cb.checked == true) {
   console.log('keep');
 }
+else if (cb.checked == false) {
+  var textArea = $(this).siblings("textarea");
+    textArea.val("");
+    localStorage.removeItem(textArea.parent().attr("id"));
+}
 })
-var cb = document.querySelectorAll('.form-check-input');
-        console.log(cb.checked); // false
+// var cb = document.querySelectorAll('.form-check-input');
+        // console.log(cb.checked); // false
 
 
 $(function () {

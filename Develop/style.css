@@ -59,3 +59,14 @@ p{
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
+
+
+/* these are set to display none to avoid confusion for the user and so i can work on them at a later time
+they will be used to add a feature to remove local storage */
+#delete {
+  display: none;
+}
+
+.form-check-input {
+  display: none;
+}
